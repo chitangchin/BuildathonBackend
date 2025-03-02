@@ -28,13 +28,15 @@ This backend service provides location-based descriptions using Claude AI and co
 - `.env` file with the required API credentials
 
 ### Steps
-1. Clone the repository:
+1. [Fork the repository](https://github.com/chitangchin/BuildathonBackend/fork)
+
+2. Clone the repository:
    ```sh
-   git clone https://github.com/chitangchin/BuildathonBackend.git
+   git clone https://github.com/{yourusername}/BuildathonBackend.git
    cd BuildathonBackend
    ```
 
-2. Create and activate a virtual environment:
+3. Create and activate a virtual environment:
    ```sh
    python -m venv venv
    source venv/bin/activate
@@ -57,10 +59,10 @@ This backend service provides location-based descriptions using Claude AI and co
      CLAUDE_MODEL = "claude-3-opus-20240229"
      ELEVENLABS_API_URL = "https://api.elevenlabs.io/v1/text-to-speech"
      CLAUDE_API_URL = "https://api.anthropic.com/v1/messages"
-     ELEVENLABS_VOICE_ID = "21m00Tcm4TlvDq8ikWAM"  # Default voice ID
+     ELEVENLABS_VOICE_ID = "21m00Tcm4TlvDq8ikWAM"
    ```
 
-5. Run the Flask application:
+5. Start the server:
    ```sh
    python main.py
    ```
@@ -98,28 +100,7 @@ This backend service provides location-based descriptions using Claude AI and co
     "description": "Now approaching the Eiffel Tower, a symbol of France..."
   }
   ```
-
----
-
-## Project Structure
-```
-.
-├── services
-│   ├── claude_service.py  # Handles Claude AI API requests
-│   ├── elevenlabs_service.py  # Handles text-to-speech conversion
-│
-├── routes
-│   ├── health.py  # Health check endpoint
-│   ├── location.py  # Location information and audio endpoints
-│
-├── config.py  # Configuration handling using dotenv
-├── app.py  # Flask application setup
-├── logging_util.py  # Logging configuration
-├── requirements.txt  # Dependencies
-├── .env  # Environment variables (ignored in Git)
-└── README.md  # Project documentation
-```
-
+  
 ---
 
 ## Logging
