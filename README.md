@@ -28,8 +28,8 @@ This backend service provides location-based descriptions using Claude AI and co
 ### Steps
 1. Clone the repository:
    ```sh
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/chitangchin/BuildathonBackend.git
+   cd BuildathonBackend
    ```
 
 2. Create and activate a virtual environment:
