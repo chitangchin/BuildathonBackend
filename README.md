@@ -48,13 +48,16 @@ This backend service provides location-based descriptions using Claude AI and co
 
 4. Create a `.env` file in the root directory and add the following:
    ```sh
-   CLAUDE_API_KEY=your_claude_api_key
-   CLAUDE_API_URL=your_claude_api_url
-   CLAUDE_MODEL=claude-model-name
-   ELEVENLABS_API_KEY=your_elevenlabs_api_key
-   ELEVENLABS_API_URL=your_elevenlabs_api_url
-   ELEVENLABS_VOICE_ID=your_elevenlabs_voice_id
-   FLASK_ENV=development  # or production
+     #API Key
+     CLAUDE_API_KEY = "skxxx"
+     ELEVENLABS_API_KEY = "skxxx"
+     
+     
+     #DEFAULT
+     CLAUDE_MODEL = "claude-3-opus-20240229"
+     ELEVENLABS_API_URL = "https://api.elevenlabs.io/v1/text-to-speech"
+     CLAUDE_API_URL = "https://api.anthropic.com/v1/messages"
+     ELEVENLABS_VOICE_ID = "21m00Tcm4TlvDq8ikWAM"  # Default voice ID
    ```
 
 5. Run the Flask application:
