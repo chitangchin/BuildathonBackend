@@ -116,14 +116,6 @@ Logging is handled via `logging_util.py`, configured through the `config.py` fil
   gunicorn -w 4 -b 0.0.0.0:5000 app:app
   ```
 
-### Docker Deployment
-1. Create a `Dockerfile` (not included yet).
-2. Build and run the Docker container:
-   ```sh
-   docker build -t location-audio .
-   docker run -p 5000:5000 location-audio
-   ```
-
 ---
 
 ## Contributing
