@@ -1,0 +1,153 @@
+# Backend API for Location-Based Audio Descriptions
+
+## Overview
+This backend service provides location-based descriptions using Claude AI and converts them into speech using ElevenLabs' text-to-speech API. Users can request information about a place, and the service will generate an audio file that describes the location.
+
+## Features
+- Fetch brief descriptions of locations using Claude AI
+- Convert descriptions into speech using ElevenLabs
+- Serve the generated audio files via API
+- Logging and environment-based configuration support
+
+## Technologies Used
+- Python (Flask)
+- Claude AI API (Anthropic)
+- ElevenLabs Text-to-Speech API
+- dotenv for environment variable management
+- Logging for debugging and monitoring
+
+---
+
+## Installation
+### Prerequisites
+- Python 3.8+
+- `pip` installed
+- API keys for Claude AI and ElevenLabs
+- `.env` file with the required API credentials
+
+### Steps
+1. Clone the repository:
+   ```sh
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
+
+2. Create and activate a virtual environment:
+   ```sh
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+
+3. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+4. Create a `.env` file in the root directory and add the following:
+   ```sh
+   CLAUDE_API_KEY=your_claude_api_key
+   CLAUDE_API_URL=your_claude_api_url
+   CLAUDE_MODEL=claude-model-name
+   ELEVENLABS_API_KEY=your_elevenlabs_api_key
+   ELEVENLABS_API_URL=your_elevenlabs_api_url
+   ELEVENLABS_VOICE_ID=your_elevenlabs_voice_id
+   FLASK_ENV=development  # or production
+   ```
+
+5. Run the Flask application:
+   ```sh
+   flask run
+   ```
+   The server should now be running on `http://127.0.0.1:5000/`.
+
+---
+
+## API Endpoints
+### Health Check
+- **Endpoint:** `/health`
+- **Method:** `GET`
+- **Response:**
+  ```json
+  {"status": "healthy"}
+  ```
+
+### Get Location Description & Audio
+- **Endpoint:** `/get-location-audio`
+- **Method:** `GET`
+- **Query Parameters:**
+  - `place`: The name of the location (e.g., `?place=Paris`)
+- **Response:**
+  - Returns an MP3 audio file with the location description.
+  - If an error occurs, returns a JSON error response.
+
+### Get Location Description (Text Only)
+- **Endpoint:** `/get-location-info`
+- **Method:** `GET`
+- **Query Parameters:**
+  - `place`: The name of the location (e.g., `?place=Paris`)
+- **Response:**
+  ```json
+  {
+    "place": "Paris",
+    "description": "Now approaching the Eiffel Tower, a symbol of France..."
+  }
+  ```
+
+---
+
+## Project Structure
+```
+.
+├── services
+│   ├── claude_service.py  # Handles Claude AI API requests
+│   ├── elevenlabs_service.py  # Handles text-to-speech conversion
+│
+├── routes
+│   ├── health.py  # Health check endpoint
+│   ├── location.py  # Location information and audio endpoints
+│
+├── config.py  # Configuration handling using dotenv
+├── app.py  # Flask application setup
+├── logging_util.py  # Logging configuration
+├── requirements.txt  # Dependencies
+├── .env  # Environment variables (ignored in Git)
+└── README.md  # Project documentation
+```
+
+---
+
+## Logging
+Logging is handled via `logging_util.py`, configured through the `config.py` file. The log level can be adjusted based on the `FLASK_ENV` variable.
+
+---
+
+## Deployment
+### Running in Production
+- Ensure `FLASK_ENV=production` in the `.env` file.
+- Use a production-ready server like Gunicorn:
+  ```sh
+  gunicorn -w 4 -b 0.0.0.0:5000 app:app
+  ```
+
+### Docker Deployment
+1. Create a `Dockerfile` (not included yet).
+2. Build and run the Docker container:
+   ```sh
+   docker build -t location-audio .
+   docker run -p 5000:5000 location-audio
+   ```
+
+---
+
+## Contributing
+1. Fork the repository
+2. Create a new feature branch
+3. Commit your changes
+4. Push to your branch
+5. Open a Pull Request
+
+---
+
+## License
+This project is licensed under the MIT License.
+
