@@ -1,4 +1,4 @@
-# Backend API for [Buildathon](https://github.com/craftingweb/Buildathon)
+# Backend API for [POINT](https://github.com/craftingweb/Buildathon)
 
 [![CI Build and Test Validation](https://github.com/chitangchin/BuildathonBackend/actions/workflows/buildandvalidationtest.yml/badge.svg)](https://github.com/chitangchin/BuildathonBackend/actions/workflows/buildandvalidationtest.yml)
 
