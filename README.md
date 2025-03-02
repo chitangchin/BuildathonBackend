@@ -1,5 +1,7 @@
 # Backend API for [Buildathon](https://github.com/craftingweb/Buildathon)
 
+[![CI Build and Test Validation](https://github.com/chitangchin/BuildathonBackend/actions/workflows/buildandvalidationtest.yml/badge.svg)](https://github.com/chitangchin/BuildathonBackend/actions/workflows/buildandvalidationtest.yml)
+
 ## Overview
 This backend service provides location-based descriptions using Claude AI and converts them into speech using ElevenLabs' text-to-speech API. Users can request information about a place, and the service will generate an audio file that describes the location.
 
