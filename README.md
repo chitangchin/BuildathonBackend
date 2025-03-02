@@ -38,7 +38,7 @@ This backend service provides location-based descriptions using Claude AI and co
    ```sh
    python -m venv venv
    source venv/bin/activate
-   # On Windows use `venv\Scripts\activate`
+   # On Windows use `source venv/Scripts/activate` for bash or venv\Scripts\activate in cmd
    ```
 
 3. Install dependencies:
