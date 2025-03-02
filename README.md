@@ -56,7 +56,7 @@ This backend service provides location-based descriptions using Claude AI and co
 
 5. Run the Flask application:
    ```sh
-   flask run
+   python main.py
    ```
    The server should now be running on `http://127.0.0.1:5000/`.
 
