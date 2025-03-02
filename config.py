@@ -5,11 +5,11 @@ load_dotenv()  # Load environment variables from .env
 
 
 # Debug: print the specific variable and all environment variables
-print("CLAUDE_API_URL:", os.getenv("CLAUDE_API_URL"))
-print("All environment variables:")
-for key, value in os.environ.items():
-    if "CLAUDE" in key or "ELEVENLABS" in key or key == "FLASK_ENV":
-        print(key, "=", value)
+# print("CLAUDE_API_URL:", os.getenv("CLAUDE_API_URL"))
+# print("All environment variables:")
+# for key, value in os.environ.items():
+#     if "CLAUDE" in key or "ELEVENLABS" in key or key == "FLASK_ENV":
+#         print(key, "=", value)
 
 class Config:
     DEBUG = False
